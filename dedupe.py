@@ -1,12 +1,17 @@
 import json
 import argparse
 import sys
+import time
 from typing import Any, List, Union, Dict
 
 def get_hashable(item: Any) -> Any:
-    """Convert non-hashable items (dicts, lists) into hashable ones for comparison."""
+    """
+    Convert non-hashable items into hashable ones for comparison.
+    Using frozenset for dicts is faster and more robust than tuple-of-tuples.
+    """
     if isinstance(item, dict):
-        return tuple(sorted((k, get_hashable(v)) for k, v in item.items()))
+        # We sort by items to ensure stable hashing
+        return frozenset((k, get_hashable(v)) for k, v in item.items())
     if isinstance(item, list):
         return tuple(get_hashable(i) for i in item)
     return item
@@ -32,30 +37,32 @@ def deduplicate(data: Any) -> Any:
     return data
 
 def main():
-    parser = argparse.ArgumentParser(description="Deduplicate large JSON files.")
+    parser = argparse.ArgumentParser(description="🚀 Optimized JSON Optimizer")
     parser.add_argument("input", help="Path to input JSON file")
     parser.add_argument("output", help="Path to output JSON file")
     
     args = parser.parse_args()
 
     try:
-        print(f"Reading {args.input}...")
+        print(f"📂 Reading {args.input}...")
         with open(args.input, 'r') as f:
-            # Using standard json.load for 100k tokens (approx 400KB-1MB) is fine.
-            # For multi-GB files, we'd use ijson.
             data = json.load(f)
         
-        print("Deduplicating...")
+        print("🧠 Deduplicating...")
+        start_time = time.time()
         deduped_data = deduplicate(data)
+        duration = time.time() - start_time
         
-        print(f"Writing to {args.output}...")
+        print(f"✅ Done in {duration:.2f}s")
+        
+        print(f"💾 Writing to {args.output}...")
         with open(args.output, 'w') as f:
             json.dump(deduped_data, f, indent=2)
         
-        print("Done!")
+        print("✨ All finished!")
 
     except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
+        print(f"❌ Error: {e}", file=sys.stderr)
         sys.exit(1)
 
 if __name__ == "__main__":

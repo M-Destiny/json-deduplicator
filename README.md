@@ -27,3 +27,24 @@ python3 dedupe.py input.json output.json
 
 ## 📄 License
 MIT
+
+---
+
+## 🛠️ Omni Tools Collection
+
+A comprehensive and continuously expanding set of utility tools designed for various tasks, from system monitoring and file operations to advanced automation and documentation. This collection is actively developed and updated.
+
+**Current Tool Count:** 31
+
+**Key Highlights:**
+- **System Diagnostics:** `system_status`, `memory_sweep`, `log_rotate`
+- **Intelligent Search:** `deep_search`, `context_search`, `history_trail`
+- **File & PDF Management:** `quick_create`, `file_pack`, `pdf_merge`, `photos_to_pdf`
+- **Network Utilities:** `ping_check`, `port_scan`, `dns_lookup`
+- **Automation & Scheduling:** `batch_process`, `timer_task`, `cron_builder`
+
+For a full list and detailed usage, refer to:
+- [`omni-tools.md`](./omni-tools.md) (Full Documentation)
+- [`omni-tools-quick.md`](./omni-tools-quick.md) (Quick Reference)
+
+---

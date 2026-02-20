@@ -1,50 +1,47 @@
-# 🐾 JSON Deduplicator
+# 🔄 JSON Deduplicator
 
-A lightweight, powerful tool to recursively deduplicate large JSON structures. It removes identical items from arrays at any nesting level.
+A powerful web-based and CLI tool to recursively deduplicate large JSON structures.
 
-## 🚀 Features
-- **Deep Comparison**: Detects identical objects and arrays regardless of nesting.
-- **Web Interface**: A clean, modern UI for browser-based deduplication.
-- **CLI Utility**: A Python script for batch processing large files.
-- **Performance**: Optimized for large JSON files (100k+ tokens).
+![JSON](https://img.shields.io/badge/JSON-Deduplicator-blue)
 
-## 🛠 Usage
+## ✨ Features
 
-### Web Interface
-Simply open `dedupe.html` in any modern browser. 
-- Paste your JSON or upload a `.json` file.
-- Click **Deduplicate Now**.
-- Download the cleaned result.
+- **Web Interface** - Clean, intuitive UI
+- **CLI Tool** - Command-line usage
+- **Recursive Deduplication** - Deep nested object handling
+- **Multiple Formats** - Supports JSON files
+- **Vercel Ready** - One-click deploy
 
-### CLI (Python)
+## 🛠️ Tech Stack
+
+- React + TypeScript
+- Node.js
+- Vercel
+
+## 🔗 Live Demo
+
+**[json-deduplicator.vercel.app](https://json-deduplicator.vercel.app)**
+
+## 📦 Usage
+
 ```bash
-python3 dedupe.py input.json output.json
+# Clone the repo
+git clone https://github.com/M-Destiny/json-deduplicator.git
+
+# Install dependencies
+npm install
+
+# Run development
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-## 📂 Project Structure
-- `dedupe.html`: The browser-based tool (HTML/JS/CSS).
-- `dedupe.py`: The Python CLI utility.
+## 📝 License
 
-## 📄 License
 MIT
 
 ---
 
-## 🛠️ Omni Tools Collection
-
-A comprehensive and continuously expanding set of utility tools designed for various tasks, from system monitoring and file operations to advanced automation and documentation. This collection is actively developed and updated.
-
-**Current Tool Count:** 31
-
-**Key Highlights:**
-- **System Diagnostics:** `system_status`, `memory_sweep`, `log_rotate`
-- **Intelligent Search:** `deep_search`, `context_search`, `history_trail`
-- **File & PDF Management:** `quick_create`, `file_pack`, `pdf_merge`, `photos_to_pdf`
-- **Network Utilities:** `ping_check`, `port_scan`, `dns_lookup`
-- **Automation & Scheduling:** `batch_process`, `timer_task`, `cron_builder`
-
-For a full list and detailed usage, refer to:
-- [`omni-tools.md`](./omni-tools.md) (Full Documentation)
-- [`omni-tools-quick.md`](./omni-tools-quick.md) (Quick Reference)
-
----
+Built by [Mehul](https://github.com/M-Destiny)
